@@ -146,6 +146,7 @@ L.Map.Sleep = L.Handler.extend({
           style[key] = noteStyleOverrides[key]
         })
       }
+      this._opacity = style.opacity
     }
   },
 
@@ -175,7 +176,7 @@ L.Map.Sleep = L.Handler.extend({
     }
 
     L.DomUtil.setOpacity(this._map._container, this._map.options.sleepOpacity)
-    this.sleepNote.style.opacity = 0.4
+    this.sleepNote.style.opacity = this._opacity
     this._addSleepingListeners()
   },
 
